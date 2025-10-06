@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head><title>Amass</title><link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"></head>
+<body><div class="banner">{{ banner }}</div>
+<div class="tool-box">
+    <h2>Amass</h2>
+    <form method="post">
+        <input name="domain" placeholder="Domain" required>
+        <button type="submit">Enumerate</button>
+    </form>
+    {% if output %}<h3>Output:</h3><pre>{{ output }}</pre>{% endif %}
+    <a href="{{ url_for('index') }}">Back</a>
+</div></body>
+</html>

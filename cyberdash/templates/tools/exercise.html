@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><title>Exercise Planner</title><link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"></head>
+<body><div class="banner">{{ banner }}</div>
+<div class="tool-box">
+    <h2>Exercise Planner</h2>
+    <form method="post">
+        <input name="scope" placeholder="Scope (CIDR, hosts, apps)" required><br>
+        <textarea name="rules" placeholder="Rules of Engagement"></textarea><br>
+        <button type="submit">Save</button>
+    </form>
+    {% if output %}<h3>Scope/Rules:</h3><pre>{{ output }}</pre>{% endif %}
+    <a href="{{ url_for('index') }}">Back</a>
+</div></body>
+</html>

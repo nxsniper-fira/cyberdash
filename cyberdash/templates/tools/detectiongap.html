@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><title>Detection Gap Analyzer</title><link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"></head>
+<body><div class="banner">{{ banner }}</div>
+<div class="tool-box">
+    <h2>Detection Gap Analyzer</h2>
+    <form method="post">
+        <textarea name="red" placeholder="Red Team Findings (one per line)"></textarea><br>
+        <textarea name="blue" placeholder="Blue Team Alerts (one per line)"></textarea><br>
+        <button type="submit">Analyze</button>
+    </form>
+    {% if output %}<h3>Result:</h3><pre>{{ output }}</pre>{% endif %}
+    <a href="{{ url_for('index') }}">Back</a>
+</div></body>
+</html>

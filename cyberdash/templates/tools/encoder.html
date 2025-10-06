@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head><title>Payload Encoder</title><link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"></head>
+<body><div class="banner">{{ banner }}</div>
+<div class="tool-box">
+    <h2>Payload Encoder</h2>
+    <form method="post">
+        <textarea name="content" placeholder="Content to encode" rows="4" cols="50"></textarea><br>
+        <select name="method">
+            <option value="base64">Base64</option>
+            <option value="url">URL-Encode</option>
+            <option value="xor">XOR</option>
+        </select>
+        <input name="key" placeholder="Key (for XOR only)">
+        <button type="submit">Encode</button>
+    </form>
+    {% if output %}<h3>Encoded Output:</h3><pre>{{ output }}</pre>{% endif %}
+    <a href="{{ url_for('index') }}">Back</a>
+</div></body>
+</html>

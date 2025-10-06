@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head><title>HTTP Request Builder</title><link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"></head>
+<body><div class="banner">{{ banner }}</div>
+<div class="tool-box">
+    <h2>Custom HTTP Request</h2>
+    <form method="post">
+        <select name="method">
+            <option>GET</option>
+            <option>POST</option>
+        </select>
+        <input name="url" placeholder="URL" required><br>
+        <textarea name="headers" placeholder="Headers (Key: Value, one per line)"></textarea><br>
+        <textarea name="data" placeholder="Body (POST only)"></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+    {% if output %}<h3>Output:</h3><pre>{{ output }}</pre>{% endif %}
+    <a href="{{ url_for('index') }}">Back</a>
+</div></body>
+</html>

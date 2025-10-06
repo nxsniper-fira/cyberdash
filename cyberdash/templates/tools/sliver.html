@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><title>Sliver C2</title><link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"></head>
+<body>
+<div class="banner">{{ banner }}</div>
+<div class="tool-box">
+    <h2>Sliver C2 <span style="color:#ff4444;">(Lab Use ONLY!)</span></h2>
+    <form method="post">
+        <select name="action">
+            <option value="status">Status</option>
+            <option value="listener">Start Listener</option>
+            <option value="payload">Generate Payload</option>
+        </select>
+        <input name="params" placeholder="Params (e.g. listener config)">
+        <button type="submit">Execute</button>
+    </form>
+    <p><b>Note:</b> This is a wrapper for Sliver C2 CLI. All actions are logged.</p>
+    {% if output %}<h3>Sliver Output:</h3><pre>{{ output }}</pre>{% endif %}
+    <a href="{{ url_for('index') }}">Back</a>
+</div></body>
+</html>

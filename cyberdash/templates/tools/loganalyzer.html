@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head><title>Log Analyzer</title><link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"></head>
+<body><div class="banner">{{ banner }}</div>
+<div class="tool-box">
+    <h2>Log Analyzer</h2>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="logfile" required><br>
+        <button type="submit">Analyze</button>
+    </form>
+    {% if output %}<h3>Last 40 Lines:</h3><pre>{{ output }}</pre>{% endif %}
+    <a href="{{ url_for('index') }}">Back</a>
+</div></body>
+</html>
