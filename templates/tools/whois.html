@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head><title>Whois</title><link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"></head>
+<body><div class="banner">{{ banner }}</div>
+<div class="tool-box">
+    <h2>Whois</h2>
+    <form method="post">
+        <input name="target" placeholder="Domain/IP" required>
+        <button type="submit">Lookup</button>
+    </form>
+    {% if output %}<h3>Output:</h3><pre>{{ output }}</pre>{% endif %}
+    <a href="{{ url_for('index') }}">Back</a>
+</div></body>
+</html>

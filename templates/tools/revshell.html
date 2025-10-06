@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head><title>Reverse Shell Listener</title><link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"></head>
+<body><div class="banner">{{ banner }}</div>
+<div class="tool-box">
+    <h2>Reverse Shell Listener</h2>
+    <form method="post">
+        <input name="lport" placeholder="Listen Port" value="4444"><br>
+        <button type="submit">Show Listener</button>
+    </form>
+    {% if output %}<h3>Instructions:</h3><pre>{{ output|safe }}</pre>{% endif %}
+    <a href="{{ url_for('index') }}">Back</a>
+</div></body>
+</html>

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head><title>theHarvester</title><link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"></head>
+<body><div class="banner">{{ banner }}</div>
+<div class="tool-box">
+    <h2>theHarvester</h2>
+    <form method="post">
+        <input name="domain" placeholder="Domain" required>
+        <input name="source" placeholder="Source (e.g. all, google, bing)" value="all">
+        <input name="limit" placeholder="Limit" value="100">
+        <button type="submit">Gather</button>
+    </form>
+    {% if output %}<h3>Output:</h3><pre>{{ output }}</pre>{% endif %}
+    <a href="{{ url_for('index') }}">Back</a>
+</div></body>
+</html>
